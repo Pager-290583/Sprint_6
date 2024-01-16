@@ -1,5 +1,4 @@
 import random
-import datetime
 from datetime import timedelta, date
 
 end_date = date.today() + timedelta(days=1)
