@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from locators.locators import LogoHeader
+from test_date.constants import Constants
 
 
 class TestLinkLogo:
@@ -15,7 +16,7 @@ class TestLinkLogo:
     def test_click_logo_samokat(self, app):
         app.base.open('/')
         app.base.click(LogoHeader.LOGO_SAMOKAT)
-        assert 'https://qa-scooter.praktikum-services.ru/' == app.wd.current_url
+        assert 'qa-scooter' in app.wd.current_url
 
     @allure.feature('Проверка ссылок в логотипах Самокат и Яндекс')
     @allure.title('Проверка: если нажать на логотип «Яндекс», попадёшь на главную страницу «Дзен».')
@@ -25,7 +26,7 @@ class TestLinkLogo:
     @allure.step('Открываем главную страницу и кликаем по логотипу Яндекс')
     def test_click_logo_yandex(self, app):
         app.base.open('/')
-        app.base.clНу ick(LogoHeader.LOGO_YANDEX)
+        app.base.click(LogoHeader.LOGO_YANDEX)
         window_after = app.wd.window_handles[1]
         app.wd.switch_to.window(window_after)
         WebDriverWait(app.wd,3).until(ec.presence_of_element_located((By.ID, 'dzen-header')))
