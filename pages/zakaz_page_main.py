@@ -6,7 +6,7 @@ from pages.base_page import BasePage
 
 
 class ZakazMainPage(BasePage):
-    @allure.step('Скролим страницу до подвала и ждем когда появится кнопка для заказа')
+    @allure.step('Заполнение полей вылидными данными')
     def scroll_zakaz(self, name, family, address, station, telephone, date_zakaz, term_data, comment):
         self.scroll_to_bottom()
         self.click(OrderLocators.THREE_BUTTON)

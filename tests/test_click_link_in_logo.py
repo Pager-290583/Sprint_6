@@ -25,7 +25,7 @@ class TestLinkLogo:
     @allure.step('Открываем главную страницу и кликаем по логотипу Яндекс')
     def test_click_logo_yandex(self, app):
         app.base.open('/')
-        app.base.click(LogoHeader.LOGO_YANDEX)
+        app.base.clНу ick(LogoHeader.LOGO_YANDEX)
         window_after = app.wd.window_handles[1]
         app.wd.switch_to.window(window_after)
         WebDriverWait(app.wd,3).until(ec.presence_of_element_located((By.ID, 'dzen-header')))

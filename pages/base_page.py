@@ -12,9 +12,9 @@ class BasePage:
     def __init__(self, app):
         self.app = app
 
-    @allure.step('Кликаем по логотипу')
-    def click_logo(self, locator):
-        self.click(locator)
+    # @allure.step('Кликаем по логотипу')
+    # def click_logo(self, locator):
+    #     self.click(locator)
 
     @allure.step('Открытие страницы')
     def open(self, url: str):
@@ -33,7 +33,6 @@ class BasePage:
     @allure.step('Выбор значения из выпадающего списка по тексту элемента')
     def choose_value_in_select(self, select_value: str, select_locator: list):
         self.click(select_locator)
-        # time.sleep(0.5)
         self.click([By.XPATH, f"//*[text()='{select_value}']"])
 
     @allure.step('Кликаем по кнопке')
