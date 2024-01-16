@@ -12,10 +12,6 @@ class BasePage:
     def __init__(self, app):
         self.app = app
 
-    # @allure.step('Кликаем по логотипу')
-    # def click_logo(self, locator):
-    #     self.click(locator)
-
     @allure.step('Открытие страницы')
     def open(self, url: str):
         self.app.wd.get(f"{self.app.base_url}{url}")
